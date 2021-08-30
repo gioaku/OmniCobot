@@ -73,8 +73,8 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
       ),
       DataCell(Row(
         children: [
-          Text(fileInfo.date!),
-          if ((int.tryParse(fileInfo.date ?? '0') ?? 0) > 40) ...[
+          Text(fileInfo.temperature!),
+          if ((int.tryParse(fileInfo.temperature ?? '0') ?? 0) > 40) ...[
             SizedBox(width: 10),
             Container(
               decoration: BoxDecoration(
@@ -92,9 +92,9 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color:
-                fileInfo.size == "On" ? Colors.greenAccent : Colors.redAccent,
+                fileInfo.status == "On" ? Colors.greenAccent : Colors.redAccent,
           ),
-          child: Text(fileInfo.size!),
+          child: Text(fileInfo.status!),
         ),
       )
     ],

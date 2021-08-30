@@ -32,17 +32,17 @@ class StarageDetails extends StatelessWidget {
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",
             title: "Working Cobots",
-            amountOfFiles: "3",
+            number: "3",
           ),
           StorageInfoCard(
             svgSrc: "assets/icons/media.svg",
             title: "Working Cobots (HT)",
-            amountOfFiles: "2",
+            number: "2",
           ),
           StorageInfoCard(
             svgSrc: "assets/icons/folder.svg",
             title: "Not-working Cobots",
-            amountOfFiles: "2",
+            number: "2",
           ),
         ],
       ),
