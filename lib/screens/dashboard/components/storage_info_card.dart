@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 
-class StorageInfoCard extends StatelessWidget {
-  const StorageInfoCard({
+class CobotInfoCard extends StatelessWidget {
+  const CobotInfoCard({
     Key? key,
     required this.title,
-    required this.svgSrc,
+    required this.color,
     required this.number,
   }) : super(key: key);
 
-  final String title, svgSrc, number;
-
+  final String title, number;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +28,7 @@ class StorageInfoCard extends StatelessWidget {
           SizedBox(
             height: 20,
             width: 20,
-            child: SvgPicture.asset(svgSrc),
+            child: Icon(Icons.circle, color: color),
           ),
           Expanded(
             child: Padding(

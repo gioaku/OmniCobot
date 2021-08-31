@@ -65,7 +65,7 @@ class NotificationBox extends StatelessWidget {
                           Icons.check_box,
                           color: brd,
                         ))
-                      : Icon(Icons.delete_forever),
+                      : Icon(Icons.question_answer),
           SizedBox(
             width: 10,
           ),

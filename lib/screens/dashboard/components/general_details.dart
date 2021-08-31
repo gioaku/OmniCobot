@@ -29,18 +29,18 @@ class GeneralDetails extends StatelessWidget {
           ),
           SizedBox(height: defaultPadding),
           Chart(),
-          StorageInfoCard(
-            svgSrc: "assets/icons/Documents.svg",
+          CobotInfoCard(
+            color: Colors.green,
             title: "Working Cobots",
             number: "3",
           ),
-          StorageInfoCard(
-            svgSrc: "assets/icons/media.svg",
+          CobotInfoCard(
+            color: Colors.yellow,
             title: "Working Cobots (HT)",
             number: "2",
           ),
-          StorageInfoCard(
-            svgSrc: "assets/icons/folder.svg",
+          CobotInfoCard(
+            color: Colors.red,
             title: "Not-working Cobots",
             number: "2",
           ),
