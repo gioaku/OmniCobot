@@ -1,5 +1,4 @@
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/dashboard/components/my_fields.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -27,7 +26,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       //MyFiles(),
                       //SizedBox(height: defaultPadding),
-                      RecentFiles(),
+                      MyCobots(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),
                       if (Responsive.isMobile(context)) StarageDetails(),
