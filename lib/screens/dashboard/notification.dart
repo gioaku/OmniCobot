@@ -66,6 +66,8 @@ class NotificationBox extends StatelessWidget {
           Text(
             notification.title ?? "--",
           ),
+          Spacer(),
+          Text(notification.timestamp ?? "--"),
         ],
       ),
     );
