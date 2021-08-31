@@ -1,4 +1,4 @@
-import 'package:admin/models/RecentFile.dart';
+import 'package:admin/models/cobotPreview.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +53,7 @@ class MyCobots extends StatelessWidget {
   }
 }
 
-DataRow myCobotsDataRow(RecentFile fileInfo, BuildContext context) {
+DataRow myCobotsDataRow(CobotPreview fileInfo, BuildContext context) {
   return DataRow(
     cells: [
       DataCell(

@@ -42,7 +42,7 @@ Widget cobotDetailListElement(CobotInfo cobotInfo) {
         flex: 3,
         child: Text(
           "${cobotInfo.title ?? "--"} :",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
       SizedBox(
@@ -50,7 +50,10 @@ Widget cobotDetailListElement(CobotInfo cobotInfo) {
       ),
       Expanded(
         flex: 2,
-        child: Text(cobotInfo.value ?? "--"),
+        child: Text(
+          cobotInfo.value ?? "--",
+          style: TextStyle(fontSize: 16),
+        ),
       )
     ],
   );

@@ -73,6 +73,9 @@ class CobotImage extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(
+          height: 10,
+        ),
         Text(
           "3D Live View",
           style: Theme.of(context).textTheme.headline6,

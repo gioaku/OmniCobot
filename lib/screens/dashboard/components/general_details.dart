@@ -32,17 +32,17 @@ class GeneralDetails extends StatelessWidget {
           CobotInfoCard(
             color: Colors.green,
             title: "Working Cobots",
-            number: "3",
+            number: "9",
           ),
           CobotInfoCard(
             color: Colors.yellow,
             title: "Working Cobots (HT)",
-            number: "2",
+            number: "4",
           ),
           CobotInfoCard(
             color: Colors.red,
             title: "Not-working Cobots",
-            number: "2",
+            number: "3",
           ),
         ],
       ),

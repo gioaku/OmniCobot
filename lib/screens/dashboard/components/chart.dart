@@ -26,14 +26,14 @@ class Chart extends StatelessWidget {
               children: [
                 SizedBox(height: defaultPadding),
                 Text(
-                  "5",
+                  "13",
                   style: Theme.of(context).textTheme.headline4!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         height: 0.5,
                       ),
                 ),
-                Text("of 7")
+                Text("of 16")
               ],
             ),
           ),
@@ -46,19 +46,19 @@ class Chart extends StatelessWidget {
 List<PieChartSectionData> paiChartSelectionDatas = [
   PieChartSectionData(
     color: Colors.greenAccent,
-    value: 3,
+    value: 9,
     showTitle: false,
     radius: 25,
   ),
   PieChartSectionData(
     color: Colors.yellowAccent,
-    value: 2,
+    value: 4,
     showTitle: false,
     radius: 22,
   ),
   PieChartSectionData(
     color: Colors.redAccent,
-    value: 2,
+    value: 3,
     showTitle: false,
     radius: 19,
   ),
