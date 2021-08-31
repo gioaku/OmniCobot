@@ -1,5 +1,4 @@
 import 'package:admin/models/notificationInfo.dart';
-import 'package:admin/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -38,7 +37,9 @@ class NotificationBox extends StatelessWidget {
         ? Colors.yellow[800]
         : notification.status == "error"
             ? Colors.red[800]
-            : Colors.white;
+            : notification.status == "fine"
+                ? Colors.green[800]
+                : Colors.white;
     return Container(
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.all(10),
@@ -59,7 +60,12 @@ class NotificationBox extends StatelessWidget {
                       Icons.error,
                       color: brd,
                     ))
-                  : Icon(Icons.delete_forever),
+                  : notification.status == "fine"
+                      ? (Icon(
+                          Icons.check_box,
+                          color: brd,
+                        ))
+                      : Icon(Icons.delete_forever),
           SizedBox(
             width: 10,
           ),
