@@ -16,6 +16,8 @@ class Notifications extends StatelessWidget {
             Header(title: "Notifications", home: false),
             SizedBox(height: defaultPadding),
             ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
               itemBuilder: (context, i) =>
                   NotificationBox(demoNotifications[i]),
               itemCount: demoNotifications.length,
@@ -30,23 +32,41 @@ class Notifications extends StatelessWidget {
 class NotificationBox extends StatelessWidget {
   const NotificationBox(this.notification, {Key? key}) : super(key: key);
   final NotificationInfo notification;
-
   @override
   Widget build(BuildContext context) {
+    Color? brd = notification.status == "warning"
+        ? Colors.yellow[800]
+        : notification.status == "error"
+            ? Colors.red[800]
+            : Colors.white;
     return Container(
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: notification.status == "alert"
-            ? Colors.red[300]
-            : notification.status == "error"
-                ? Colors.yellow[300]
-                : secondaryColor,
-        // border: Border.all(
-        //   color: (notification.status == "alert"
-        //       ? Colors.red[800]
-        //       : notification.status == "error"
-        //           ? Colors.yellow[800]
-        //           : Colors.white),
-        // )
+        color: secondaryColor,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: brd ?? Colors.white, width: 2),
+      ),
+      child: Row(
+        children: [
+          notification.status == "warning"
+              ? (Icon(
+                  Icons.warning,
+                  color: brd,
+                ))
+              : notification.status == "error"
+                  ? (Icon(
+                      Icons.error,
+                      color: brd,
+                    ))
+                  : Icon(Icons.delete_forever),
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            notification.title ?? "--",
+          ),
+        ],
       ),
     );
   }
