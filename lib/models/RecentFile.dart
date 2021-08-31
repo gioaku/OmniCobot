@@ -4,7 +4,7 @@ class RecentFile {
   RecentFile({this.icon, this.title, this.temperature, this.status});
 }
 
-List demoRecentFiles = [
+List demoCobots = [
   RecentFile(
     icon: "assets/icons/xd_file.svg",
     title: "Cobot 1",

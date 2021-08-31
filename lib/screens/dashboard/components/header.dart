@@ -9,8 +9,11 @@ import '../../../constants.dart';
 class Header extends StatelessWidget {
   const Header({
     Key? key,
+    required this.title,
+    required this.home,
   }) : super(key: key);
-
+  final String title;
+  final bool home;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,12 +25,29 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Text(
-            "Dashboard",
+            title,
             style: Theme.of(context).textTheme.headline6,
           ),
         if (!Responsive.isMobile(context))
           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-        Expanded(child: SearchField()),
+        if (home) Expanded(child: SearchField()),
+        if (!home)
+          InkWell(
+            onTap: () => Navigator.pop(context),
+            child: Container(
+              padding: EdgeInsets.all(defaultPadding),
+              //margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+
+              decoration: BoxDecoration(
+                color: primaryColor,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ProfileCard()
       ],
     );

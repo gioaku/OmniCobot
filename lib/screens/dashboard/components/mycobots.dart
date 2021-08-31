@@ -28,6 +28,7 @@ class MyCobots extends StatelessWidget {
             width: double.infinity,
             child: DataTable2(
               columnSpacing: defaultPadding,
+              showCheckboxColumn: false,
               minWidth: 600,
               columns: [
                 DataColumn(
@@ -41,8 +42,8 @@ class MyCobots extends StatelessWidget {
                 ),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                demoCobots.length,
+                (index) => myCobotsDataRow(demoCobots[index], context),
               ),
             ),
           ),
@@ -52,7 +53,7 @@ class MyCobots extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow myCobotsDataRow(RecentFile fileInfo, BuildContext context) {
   return DataRow(
     cells: [
       DataCell(
@@ -68,7 +69,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
       ),
       DataCell(Row(
         children: [
-          Text(fileInfo.temperature!),
+          Text("${fileInfo.temperature!} °C"),
           if ((int.tryParse(fileInfo.temperature ?? '0') ?? 0) > 40) ...[
             SizedBox(width: 10),
             Container(
@@ -93,5 +94,6 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
         ),
       )
     ],
+    onSelectChanged: (b) => Navigator.pushNamed(context, '/cobotdetails'),
   );
 }

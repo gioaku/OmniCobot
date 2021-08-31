@@ -15,12 +15,12 @@ class SideMenu extends StatelessWidget {
             child: Image.asset("assets/images/logo_nome.png"),
           ),
           DrawerListTile(
-            title: "HomePage",
+            title: "Dashboard",
             svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {},
+            press: () => Navigator.pushNamed(context, '/mainscreen'),
           ),
           DrawerListTile(
-            title: "Transaction",
+            title: "Statistics",
             svgSrc: "assets/icons/menu_tran.svg",
             press: () {},
           ),
@@ -30,19 +30,19 @@ class SideMenu extends StatelessWidget {
             press: () {},
           ),
           DrawerListTile(
-            title: "Documents",
+            title: "Report",
             svgSrc: "assets/icons/menu_doc.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Store",
+            title: "Plug-in",
             svgSrc: "assets/icons/menu_store.svg",
             press: () {},
           ),
           DrawerListTile(
             title: "Notification",
             svgSrc: "assets/icons/menu_notification.svg",
-            press: () {},
+            press: () => Navigator.pushNamed(context, '/notification'),
           ),
           DrawerListTile(
             title: "Profile",
